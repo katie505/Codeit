@@ -41,7 +41,7 @@ class Solution:
         print(f'{i}번째 mergeTowLists')
 
 
-        if (not l1) or (l2 and l1.val > l2.val):
+        if (not l1) or (l2 and l1.val > l2.val): # l1에 객체가 없거나 l2에 객체가 존재하고, l1, l2노드를 비교했을 때 l1의 value가 더 컸을 때 실행
             print("첫번째 조건문")
             l1, l2 = l2, l1
             my_print(l1, l2)
