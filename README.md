@@ -1,4 +1,5 @@
 # codeit
+- 데이터 사이언스 입문
 - 자료 구조
 
 # leetcode
