@@ -1,0 +1,23 @@
+<최단 경로>
+- 두 노드 사이 경로 중 가장 거리가 짧은 경로
+- Shorted Path
+- BFS(비가중치), Dijkstra(가중치)
+
+최단 경로 알고리즘
+1) BFS
+- 비가중치 그래프 최단 경로
+- BFS predecessor : BFS를 할 때 특정 노드에 오기 직전의 노드
+EX) A에 인접한 노드들이 B,C일 경우 B와 C의 predecessor은 A
+- 시작 노드를 방문 표시 후, 큐에 넣음 -> 큐에 아무 노드가 없을 때까지: 큐 가장 앞 노드를 꺼낸다 -> 꺼낸 노드에 인접한 노드들을 모두 보면서: 처음 방문한 노드면: 방문한 노드 표시를 해준다 -> predecessor 변수를 큐에서 꺼낸 노드로 설정 -> 큐에 넣어준다
+- Backtracking : 목표 지점을 기준으로 predecessor을 따라 감
+: 현재 노드를 경로에 추가 -> 현재 노드의 predecessor로 간다 -> predecessor가 없을 때까지 앞의 단계 반복
+- 최단 경로가 여러 개인 경우 BFS로 모두 찾아낼 수 있음
+
+2) Dijkstra
+- 가중치 그래프 최단 경로
+- distance : 시작점에서 현 노드까지의 '최단 거리 예상치' (현재까지 아는 정보로 계산한 최단거리)
+- predecessor : 현재까지 최단 경로에서 바로 직전의 노드
+- complete : 노드까지의 최단 경로를 찾았다고 표시하기 위한 변수
+- relax : 노드를 하나씩 방문하면서 해당 노드의 distance, predecessor을 바꿈
+=> 나머지 하나의 노드의 최단 거리 구하기 = (두 노드 중 하나의 노드의 distance와 두 노드의 엣지 가중치의 합) vs 나머지 하나의 노드의 distance 비교 후 더 작은 값을 나머지 하나의 노드의 distance로 갱신
+- 시작점의 distance를 0으로, predecessor를 None으로 -> 모든 노드가 complete 일 때까지 : complete하지 않은 노드 중 distance가 가장 작은 노드 선택 -> 이 노드에 인접한 노드 중 complete하지 않은 노드를 돌면서: 각 엣지를 relax -> 현재 노드 complete 처리
