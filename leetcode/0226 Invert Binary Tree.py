@@ -11,8 +11,6 @@ class TreeNode:
         self.right = None
 
 import collections
-from typing import List
-
 
 # In[10]:
 
