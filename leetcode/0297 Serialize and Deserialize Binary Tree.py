@@ -46,7 +46,6 @@ node2.right = node4
 #BFS로 표현하면 순서대로 배치되기 때문에, DFS에 비해 매우 직관적
 import collections
 
-from typing import List
 class Codec:
     # 직렬화
     def serialize(self, root: TreeNode) -> str:
